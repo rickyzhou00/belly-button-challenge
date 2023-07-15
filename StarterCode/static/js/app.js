@@ -76,6 +76,7 @@
 
     // Load the data
 d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then(function(data) {
+  
     // Get the test subject IDs
     var testSubjectIds = data.names;
   
@@ -105,7 +106,7 @@ d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1
   function optionChanged(selectedId) {
     // Fetch the data
     d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then(function(data) {
-      
+
       // Find the metadata for the selected ID
       var metadata = data.metadata.find(obj => obj.id === parseInt(selectedId));
   
@@ -180,7 +181,6 @@ d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1
         yaxis: { title: "OTU IDs" }
       };
   
-      // Update the bar chart
       Plotly.newPlot("bar", barData, barLayout);
     });
   }
